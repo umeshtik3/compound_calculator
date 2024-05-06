@@ -1,4 +1,6 @@
-{
+
+class FixtureUtil {
+  static String json = ''' {
   "fields": [
     {
       "name": "rate_of_interest",
@@ -49,7 +51,7 @@
       "label": "No. of times compounded per year",
       "textColor": "#000000",
       "textSize": 16,
-      "values": [1, 2, 4]
+      "values": [ {"value": 12, "label": "1"},{"value": 6, "label": "2"},{"value": 3, "label": "4"}]
     },
     {
       "name": "number_of_years",
@@ -57,23 +59,21 @@
       "label": "No. of Years",
       "textColor": "#000000",
       "textSize": 16,
-      "values": {
-        "1": {"min": 1, "max": 10},
-        "2": {"min": 1, "max": 20},
-        "4": {"min": 1, "max": 30}
-      },
       "validators": {
         "1": {"min": 1, "max": 10},
         "2": {"min": 1, "max": 20},
         "4": {"min": 1, "max": 30}
       }
+     
     },
     {
-      "name": "output_value",
+      "name": "display",
+      "type":"multi",
       "textColor": "#000000",
       "textSize": 16,
-      "label": "Output Value",
-      "modeOfDisplay": ["snackbar","pop-up-dialog","text-field"]
+      "label": "Output Widget",
+      "modeOfDisplay": "snackbar"
     }
   ]
+}''';
 }
